@@ -46,10 +46,7 @@ async def predict(data: InputData):
         result = await model.predict(data)
 
         return JSONResponse(
-            content={
-                "message": "Successfully",
-                "content": result
-            },
+            content={result},
             status_code=200
         )
     except CustomException as exc:
