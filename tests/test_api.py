@@ -8,6 +8,7 @@ sys.path.append(["../"])
 from model.model import train_model, compute_model_metrics, inference
 
 class TestAPI(unittest.TestCase):
+    """Test API utils"""
     def test_train_model(self,):
         """
         Test pipeline of training model
