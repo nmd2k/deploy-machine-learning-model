@@ -17,4 +17,5 @@
 *Get request*
 ![request](./screenshots/request.png)
 *CI/CD*
-![ci-cd](./screenshots/)
+![ci-cd](./screenshots/ci-cd.png)
+![unittest](./screenshots/unittest_passed.png)
