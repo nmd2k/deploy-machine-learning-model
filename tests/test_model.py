@@ -1,10 +1,11 @@
+import os
 import sys
 import json
 import unittest
 import requests
 
 sys.path.append(["../"])
-URL = "http://127.0.0.1:1234/"
+URL = os.getenv("HOST_URL", default="http://127.0.0.1:1234/")
 
 
 def request(data):
