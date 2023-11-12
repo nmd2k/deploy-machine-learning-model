@@ -35,7 +35,7 @@ class TestModel(unittest.TestCase):
                 }
         response = client.post("/predict", data=json.dumps(data))
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.json(), {"pred": ">50K"})
+        self.assertEqual(response.json(), {"prediction": ">50K"})
 
     def test_predict_negative(self,):
         """Test"""
@@ -56,7 +56,7 @@ class TestModel(unittest.TestCase):
                 }
         response = client.post("/predict", data=json.dumps(data))
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.json(), {"pred": "<=50K"})
+        self.assertEqual(response.json(), {"prediction": "<=50K"})
 
     def test_predict_invalid(self):
         """Test"""

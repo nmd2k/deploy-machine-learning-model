@@ -9,6 +9,7 @@ from sklearn.model_selection import train_test_split
 # Add the necessary imports for the starter code.
 from data import process_data
 from model import train_model, compute_model_metrics, inference
+from model_slice import compute_slice_metrics
 sys.path.append(["../"])
 
 logger = logging.getLogger(__name__)
@@ -16,6 +17,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 # Add code to load in the data.
 data = pd.read_csv("data/cleaned_census.csv")
+data.drop(columns=["Unnamed: 0"], inplace=True)
 
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
 train, test = train_test_split(data, test_size=0.20)

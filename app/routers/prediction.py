@@ -43,10 +43,10 @@ async def predict(data: InputData):
     """Logic of prediction function"""
     try:
         model = InferenceModel()
-        result = await model.predict(data)
+        result = await model.predict(data.dict())
 
         return JSONResponse(
-            content={result},
+            content=result,
             status_code=200
         )
     except CustomException as exc:

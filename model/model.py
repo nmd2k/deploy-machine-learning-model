@@ -1,5 +1,7 @@
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import fbeta_score, precision_score, recall_score
+from sklearn.metrics import fbeta_score
+from sklearn.metrics import precision_score
+from sklearn.metrics import recall_score
 
 
 # Optional: implement hyperparameter tuning.
