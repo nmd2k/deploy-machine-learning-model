@@ -25,6 +25,7 @@ jobs:
 
     - name: Run tests
       run: |
-        HOST_URL="$RENDER_URL" python -m unittest
+        echo $RENDER_URL
+        HOST_URL=$RENDER_URL python -m unittest
       env:
         RENDER_URL: ${{ secrets.HOST_URL }}

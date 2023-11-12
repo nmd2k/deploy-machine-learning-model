@@ -5,7 +5,7 @@ import unittest
 import requests
 
 sys.path.append(["../"])
-URL = os.getenv("HOST_URL", default="http://127.0.0.1:1234/")
+URL = os.getenv("HOST_URL")
 
 
 def request(data):
