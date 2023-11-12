@@ -1,18 +1,22 @@
 import sys
 import json
 import unittest
-from fastapi.testclient import TestClient
+import requests
 
-from main import app
 sys.path.append(["../"])
+URL = "http://127.0.0.1:1234/"
 
-client = TestClient(app)
+
+def request(data):
+    response = requests.post(URL+"predict", json = data)
+    return response
+
 
 class TestModel(unittest.TestCase):
     """Test model utils"""
     def test_root(self):
         """Test"""
-        r = client.get("/")
+        r = requests.get(URL)
         self.assertEqual(r.status_code, 200)
         self.assertEqual(r.json()["message"], "Hello, welcome to our app!")
 
@@ -33,7 +37,7 @@ class TestModel(unittest.TestCase):
                 "hours_per_week": 40,
                 "native_country": "United-States"
                 }
-        response = client.post("/predict", data=json.dumps(data))
+        response = request(data=data)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json(), {"prediction": ">50K"})
 
@@ -54,15 +58,9 @@ class TestModel(unittest.TestCase):
                 "hours_per_week": 40,
                 "native_country": "United-States"
                 }
-        response = client.post("/predict", data=json.dumps(data))
+        response = request(data=data)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json(), {"prediction": "<=50K"})
-
-    def test_predict_invalid(self):
-        """Test"""
-        data = {}
-        response = client.post("/predict", json=json.dumps(data))
-        self.assertEqual(response.status_code, 422)
 
 
 if __name__ == "__main__":

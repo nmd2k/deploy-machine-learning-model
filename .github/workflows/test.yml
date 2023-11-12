@@ -25,4 +25,5 @@ jobs:
 
     - name: Run tests
       run: |
+        uvicorn main:app --port=1234
         python -m unittest

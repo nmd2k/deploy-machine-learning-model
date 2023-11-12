@@ -34,7 +34,6 @@ class InferenceModel:
         Predict function
         """
         try:
-            print(data)
             data = {k.replace('_', '-'):[v] for k,v in data.items()}
             input_data = pd.DataFrame.from_dict(data)
             X = process_data(input_data, categorical_features=self.cat_features,
