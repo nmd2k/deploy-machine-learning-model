@@ -26,4 +26,5 @@ jobs:
     - name: Run tests
       run: |
         python -m unittest
-      env: ${{ secrets.HOST_URL }}
+      env:
+        HOST_URL: ${{ secrets.HOST_URL }}
