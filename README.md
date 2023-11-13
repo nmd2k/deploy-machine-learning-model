@@ -19,4 +19,5 @@
 ![request](./screenshots/request.png)
 *CI/CD*
 ![ci-cd](./screenshots/ci-cd.png)
+![continous_deployment](./screenshots/continuous_deployment.png)
 ![unittest](./screenshots/unittest_passed.png)
