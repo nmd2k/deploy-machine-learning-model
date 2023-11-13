@@ -10,6 +10,7 @@
 ## Screenshots
 *Deployment*
 ![deploy](./screenshots/deploying.png)
+![render](./screenshots/render_auto_deploy.png)
 *Swagger FastAPI*
 ![swagger](./screenshots/swagger_fast_api.png)
 *Live post*

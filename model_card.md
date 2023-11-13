@@ -44,8 +44,7 @@ Fbeta: 0.6730901582931865
 
 ## Ethical Considerations
 
-This model is trained on census data. 
-The model is not biased towards any particular group of people.
+This model is trained on census data. Since the dataset contains sensitive attributes like `race`, `sex`, etc. special care must be taken to avoid any potential biases or unfair treatment of individuals or groups.
 
 ## Caveats and Recommendations
 
